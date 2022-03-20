@@ -6,6 +6,9 @@
 
 ```SH
 yay -S qemu virt-manager
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
 ```
 
 Configure user to `run as`
@@ -48,6 +51,13 @@ nvram = [
 
 ```SH
 sudo mv /usr/share/qemu/firmware /usr/share/qemu/firmware-old
+```
+
+restart libvirt, and ensure it was successful
+
+```SH
+sudo systemctl restart libvirtd
+sudo systemctl status libvirtd
 ```
 
 ## Everything is ready to create our VM
